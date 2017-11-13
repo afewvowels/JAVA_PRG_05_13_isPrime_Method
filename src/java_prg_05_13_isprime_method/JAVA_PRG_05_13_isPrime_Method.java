@@ -27,20 +27,25 @@ public class JAVA_PRG_05_13_isPrime_Method {
     {
         int intNumber;
         
-        intNumber = getNumber();
-        
-        if (isPrime(intNumber) == false)
+        do
         {
-            System.out.println(intNumber + " is not prime.");
-        }
-        else if (isPrime(intNumber) == true)
-        {
-            System.out.println(intNumber + " is prime.");
-        }
-        else
-        {
-            System.out.println("ERROR DETERMING ISPRIME");
-        }
+            System.out.println("Enter a 1 to quit.");
+            
+            intNumber = getNumber();
+            
+            if (isPrime(intNumber) == false)
+            {
+                System.out.println(intNumber + " is not prime.");
+            }
+            else if (isPrime(intNumber) == true)
+            {
+                System.out.println(intNumber + " is prime.");
+            }
+            else
+            {
+                System.out.println("ERROR DETERMING ISPRIME");
+            } 
+        } while (intNumber != 1);
     }
     
     public static int getNumber()
@@ -53,7 +58,7 @@ public class JAVA_PRG_05_13_isPrime_Method {
         {
             System.out.println("Please enter an integer value: ");
             intNum = scrKeyboard.nextInt();
-        } while (intNum <= 1 || intNum > 1000000);
+        } while (intNum < 1 || intNum > 1000000);
         
         return intNum;
     }
